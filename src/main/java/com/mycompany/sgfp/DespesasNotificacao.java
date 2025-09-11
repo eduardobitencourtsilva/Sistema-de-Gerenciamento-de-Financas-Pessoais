@@ -14,8 +14,12 @@ public class DespesasNotificacao implements Runnable {
         this.despesa = despesa;
     }
     
+    public String getMensagem() {
+        return "Você tem a conta " + despesa.getInfo().getNome() + " de id " + despesa.getId() + " para pagar!";
+    }
+    
     @Override
     public void run() {
-        JOptionPane.showMessageDialog(null, "Você tem a conta " + despesa.getInfo().getNome() + " de id " + despesa.getId() + " para pagar!"); 
+        JOptionPane.showMessageDialog(null, getMensagem()); 
     }
 }
